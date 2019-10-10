@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { notEqual } from "assert";
 
 function Team(props) {
 
     return (
-        <div className='team-list'>
+        <div className='team-container'>
             {props.teamList.map(team => {
                 return (
-                    <div className='team' key={team.id}>
-                        <h2>{team.name}</h2>
-                        <p>{team.email}</p>
-                        <p>{team.role}</p>
-                    </div>
+                    <>
+                    <div className='team-card' key={team.id}>                
+                        <div className='name'>{team.name}</div>
+                        <div className='email'><p>{team.email}</p></div>
+                        <div className='role'>{team.role}</div>
+                    </div>                       
+                    </>        
                 );
             })}
         </div>

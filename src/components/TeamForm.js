@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css';
 
 function TeamForm(props) {
     const [teams, setTeams] = useState({ name: "", email: "", role: "" })
@@ -13,17 +14,21 @@ function TeamForm(props) {
         }
 
     return (
+        <div className='form-container'>
+        <div className='form'>
         <form onSubmit={handleSubmit}>
-            <label htmlFor='Name'>Name</label>
+            <div className='form-input'>
+            <p><label htmlFor='name'>Name</label></p>
             <input
                 id='name'
-                value={teams.title}
+                value={teams.name}
                 name='name'
                 type='text'
                 onChange={handleChange}
             />
-
-            <label htmlFor='email'>Email</label>
+            </div>
+            <div className='form-input'>
+            <p><label htmlFor='email'>Email</label></p>
             <input
                 id='email'
                 value={teams.email}
@@ -31,8 +36,9 @@ function TeamForm(props) {
                 type='text'
                 onChange={handleChange}
             />
-
-            <label htmlFor='role'>Role</label>
+            </div>
+            <div className='form-input'>
+            <p><label htmlFor='role'>Role</label></p>
             <input
                 id='role'
                 value={teams.role}
@@ -40,8 +46,12 @@ function TeamForm(props) {
                 type='text'
                 onChange={handleChange}
             />
-            <button type='submit'>Add Team Member</button>
+            
+            </div>
+            <button className='submit-button' type='submit'>Add Team Member</button>
         </form>
+        </div>
+        </div>
     );
 };
 
